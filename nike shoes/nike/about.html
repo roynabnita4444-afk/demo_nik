@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nike 3D Shoes - About</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- For icons -->
+  <style>
+    /* Enhanced styles for a more stylish and attractive design */
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    #about {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    #about::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('images/nike-shoes/hero-shoe.png') no-repeat center center;
+      background-size: cover;
+      opacity: 0.15;
+      z-index: 0;
+      filter: blur(2px);
+    }
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+      align-items: center;
+    }
+    .about-text {
+      animation: slideInLeft 1.2s ease-out;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    }
+    .about-text h2 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+      background: linear-gradient(45deg, #fff, #f0f0f0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .about-text p {
+      font-size: 1.3rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
+      font-weight: 300;
+    }
+    .mission-points {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+    .mission-points li {
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .mission-points li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    .mission-points li::before {
+      content: '\f00c'; /* Font Awesome check icon */
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: #4CAF50;
+      margin-right: 15px;
+      font-size: 1.5rem;
+    }
+    .shoe-3d {
+      animation: slideInRight 1.2s ease-out;
+      text-align: center;
+      position: relative;
+    }
+    .shoe-3d img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      transition: transform 0.5s ease, filter 0.5s ease;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));
+    }
+    .shoe-3d img:hover {
+      transform: scale(1.1) rotateY(15deg) rotateX(5deg);
+      filter: brightness(1.1) drop-shadow(0 15px 30px rgba(0,0,0,0.5));
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @media (max-width: 768px) {
+      .about-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .about-text h2 {
+        font-size: 2.5rem;
+      }
+      .about-text p {
+        font-size: 1.1rem;
+      }
+      .mission-points li {
+        font-size: 1rem;
+      }
+    }
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+ <header class="navbar">
+  <div class="container nav-container">
+    <h3>Nike</h3>
+    <div class="dropdown">
+      <a href="#" class="btn" style="background: transparent; color: #fff; border: none;">Menu</a>
+      <div class="dropdown-content">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="nav-cart-search">
+      <form class="search-form" action="search.html" method="get">
+        <input type="text" name="query" placeholder="Search..." required>
+        <button type="submit">Search</button>
+      </form>
+      <a href="cart.html" class="btn">Cart</a>
+    </div>
+  </div>
+</header>
+
+  <section id="about">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>About Nike</h2>
+        <p>Nike is a global leader in athletic footwear, apparel, and equipment. Our mission is to bring inspiration and innovation to every athlete in the world.</p>
+        <ul class="mission-points">
+          <li>Innovative designs that push boundaries</li>
+          <li>Sustainable practices for a better future</li>
+          <li>Empowering athletes of all levels</li>
+          <li>Cutting-edge technology in every product</li>
+        </ul>
+      </div>
+      <div class="shoe-3d">
+        <img src="images/nike-shoes/hero-shoe.png" alt="Nike Shoe">
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Nike. All rights reserved.</p>
+  </footer>
+</body>
+</html>

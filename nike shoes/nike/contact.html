@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nike 3D Shoes - Contact</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- For icons -->
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      color: #333;
+      overflow-x: hidden;
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('images/nike-shoes/hero-shoe.png') no-repeat center center;
+      background-size: cover;
+      opacity: 0.03;
+      z-index: -1;
+      filter: blur(5px);
+    }
+
+    /* Header */
+    .navbar {
+      background: #000;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .nav-container h3 {
+      color: #fff;
+      font-size: 2rem;
+      margin: 0;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #fff;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      z-index: 1;
+      border-radius: 5px;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .dropdown-content a {
+      color: #333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background 0.3s;
+    }
+    .dropdown-content a:hover {
+      background: #f1f1f1;
+    }
+    .nav-cart-search {
+      display: flex;
+      align-items: center;
+    }
+    .search-form {
+      display: flex;
+      margin-right: 20px;
+    }
+    .search-form input {
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 5px 0 0 5px;
+      background: #fff;
+    }
+    .search-form button {
+      padding: 8px 12px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .search-form button:hover {
+      background: #333;
+    }
+    .btn {
+      background: #fff;
+      color: #000;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      font-weight: bold;
+      border: 1px solid #000;
+    }
+    .btn:hover {
+      background: #000;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Contact Section */
+    #contact {
+      padding: 120px 0 80px;
+      background: transparent;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    #contact::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(0,0,0,0.05));
+      z-index: -1;
+    }
+    #contact h2 {
+      font-size: 4rem;
+      margin-bottom: 50px;
+      color: #000;
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+      background: linear-gradient(45deg, #000, #333);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: textGlowPulse 2s ease-in-out infinite alternate;
+      position: relative;
+    }
+    @keyframes textGlowPulse {
+      from { text-shadow: 3px 3px 6px rgba(0,0,0,0.1); transform: scale(1); }
+      to { text-shadow: 3px 3px 6px rgba(0,0,0,0.3); transform: scale(1.02); }
+    }
+    .contact-form {
+      max-width: 700px;
+      margin: 0 auto 60px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 60px;
+      border-radius: 30px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(0,0,0,0.1);
+      animation: slideInUpBounce 1.2s ease-out;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-form::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, rgba(255,255,255,0.2), rgba(0,0,0,0.05));
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: -1;
+    }
+    .contact-form:hover::before {
+      opacity: 1;
+    }
+    @keyframes slideInUpBounce {
+      0% { opacity: 0; transform: translateY(100px) scale(0.9); }
+      50% { opacity: 1; transform: translateY(-10px) scale(1.05); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 18px;
+      margin-bottom: 25px;
+      border: 2px solid #ddd;
+      border-radius: 15px;
+      background: rgba(255,255,255,0.8);
+      font-size: 1.1rem;
+      transition: all 0.4s ease;
+      box-shadow: inset 0 4px 8px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #000;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2), inset 0 4px 8px rgba(0,0,0,0.1);
+      outline: none;
+      transform: translateY(-2px);
+    }
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+    .contact-form .btn {
+      width: 100%;
+      background: linear-gradient(45deg, #000, #333);
+      color: #fff;
+      border: none;
+      padding: 18px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-form .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    .contact-form .btn:hover::before {
+      left: 100%;
+    }
+    .contact-form .btn:hover {
+      background: linear-gradient(45deg, #333, #000);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    }
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .info-item {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .info-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #000, #333);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+    .info-item:hover::before {
+      transform: scaleX(1);
+    }
+    .info-item:hover {
+      transform: translateY(-10px) rotateX(5deg);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    .info-item i {
+      font-size: 3rem;
+      color: #000;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+    .info-item:hover i {
+      transform: scale(1.2) rotate(10deg);
+    }
+    .info-item h3 {
+      margin-bottom: 15px;
+      color: #000;
+      font-size: 1.5rem;
+    }
+    .info-item p {
+      color: #555;
+      font-size: 1.1rem;
+    }
+    .social-links {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .social-links a {
+      font-size: 2rem;
+      color: #000;
+      transition: all 0.3s ease;
+    }
+    .social-links a:hover {
+      color: #333;
+      transform: scale(1.2) rotate(15deg);
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 40px 0;
+    }
+    footer p {
+      margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      #contact h2 {
+        font-size: 2.8rem;
+      }
+      .contact-form {
+        padding: 40px;
+      }
+      .contact-info {
+        grid-template-columns: 1fr;
+      }
+      .info-item {
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <h3>Nike</h3>
+      <div class="dropdown">
+        <a href="#" class="btn" style="background: transparent; color: #fff; border: none;">Menu</a>
+        <div class="dropdown-content">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="nav-cart-search">
+        <form class="search-form" action="search.html" method="get">
+          <input type="text" name="query" placeholder="Search..." required>
+          <button type="submit">Search</button>
+        </form>
+        <a href="cart.html" class="btn">Cart</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form class="contact-form" id="contactForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Address</h3>
+          <p>One Bowerman Drive, Beaverton, OR 97005, USA</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <h3>Phone</h3>
+          <p>+1 (503) 671-6453</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <h3>Email</h3>
+          <p>contact@nike.com</p>
+        </div>
+      </div>
+      <div class="social-links">
+        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Nike. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // Get form data
+      const name = this.name.value;
+      const email = this.email.value;
+      const message = this.message.value;
+
+      // Create mailto link
+      const subject = encodeURIComponent('Contact Form Submission from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+      const mailtoLink = 'mailto:contact@nike.com?subject=' + subject + '&body=' + body;
+
+      // Open email client
+      window.location.href = mailtoLink;
+
+      // Optional: Show a success message
+      alert('Thank you for your message! Your email client has opened with the details.');
+    });
+  </script>
+</body>
+</html>

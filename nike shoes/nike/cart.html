@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nike 3D Shoes - Cart</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Creative and attractive custom styles for the Cart page */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #f0f0f0 0%, #d0d0d0 100%);
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .cart-hero {
+      background: url('https://via.placeholder.com/1920x400?text=Your+Nike+Cart') no-repeat center center/cover;
+      height: 20vh; /* Decreased height from 40vh to 20vh */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+    .cart-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .cart-hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .cart-hero h1 {
+      font-size: 2em; /* Slightly reduced font size */
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+    .cart-section {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .cart-items {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+    .cart-items h2 {
+      margin-top: 0;
+      color: #111;
+    }
+    .cart-items ul {
+      list-style: none;
+      padding: 0;
+    }
+    .cart-items li {
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cart-items li:last-child {
+      border-bottom: none;
+    }
+    .item-details {
+      flex: 1;
+    }
+    .item-price {
+      font-weight: bold;
+      color: #e74c3c;
+    }
+    .empty-cart {
+      text-align: center;
+      font-style: italic;
+      color: #777;
+    }
+    .cart-actions {
+      text-align: center;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 10px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #0056b3;
+    }
+    .checkout-btn {
+      background: #28a745;
+    }
+    .checkout-btn:hover {
+      background: #218838;
+    }
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    @media (max-width: 768px) {
+      .cart-hero h1 {
+        font-size: 1.5em;
+      }
+      .cart-items li {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <h3>Nike</h3>
+      <div class="dropdown">
+        <a href="#" class="btn" style="background: transparent; color: #fff; border: none;">Menu</a>
+        <div class="dropdown-content">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="nav-cart-search">
+        <form class="search-form" action="search.html" method="get">
+          <input type="text" name="query" placeholder="Search..." required>
+          <button type="submit">Search</button>
+        </form>
+        <a href="cart.html" class="btn">Cart</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="cart-hero">
+    <div class="cart-hero-content">
+      <h1>Your Nike Cart</h1>
+    </div>
+  </section>
+
+  <section class="cart-section">
+    <div class="cart-items">
+      <h2>Items in Your Cart</h2>
+      <div id="cart-items" class="empty-cart">No items in cart.</div>
+      <script>
+        // Note: This <script> is for demo only; remove if strictly no JS. It parses URL params to display cart items.
+        const urlParams = new URLSearchParams(window.location.search);
+        const items = urlParams.getAll('item');
+        const cartItemsDiv = document.getElementById('cart-items');
+        if (items.length > 0) {
+          let total = 0;
+          const itemList = items.map(item => {
+            // Mock pricing for demo (replace with real logic)
+            const price = 100; // Example price
+            total += price;
+            return `<li><div class="item-details">${item}</div><div class="item-price">$${price}</div></li>`;
+          }).join('');
+          cartItemsDiv.innerHTML = `<ul>${itemList}</ul><p style="text-align: right; font-weight: bold; margin-top: 20px;">Total: $${total}</p>`;
+          cartItemsDiv.classList.remove('empty-cart');
+        }
+      </script>
+    </div>
+    <div class="cart-actions">
+      <a href="products.html" class="btn">Continue Shopping</a>
+      <a href="checkout.html" class="btn checkout-btn">Proceed to Checkout</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Nike. All rights reserved.</p>
+  </footer>
+</body>
+</html>

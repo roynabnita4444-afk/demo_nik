@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nike 3D Shoes - Home</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <h3>Nike</h3>
+      <div class="dropdown">
+        <a href="#" class="btn" style="background: transparent; color: #fff; border: none;">Menu</a>
+        <div class="dropdown-content">
+          <a href="#home">Home</a>
+          <a href="products.html">Products</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="nav-cart-search">
+        <form class="search-form" action="search.html" method="get">
+          <input type="text" name="query" placeholder="Search..." required>
+          <button type="submit">Search</button>
+        </form>
+        <a href="cart.html" class="btn">Cart</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container">
+      <!-- Carousel Slider Above "Just Do It" -->
+      <div class="carousel">
+        <div class="carousel-slide">
+          <img src="images/nike-shoes/hero-shoe.png" alt="Nike Hero Shoe" class="carousel-img">
+        </div>
+        <div class="carousel-slide">
+          <img src="images/nike-shoes/shoe1.png" alt="Nike Air Max" class="carousel-img">
+        </div>
+        <div class="carousel-slide">
+          <img src="images/nike-shoes/shoe2.png" alt="Nike React" class="carousel-img">
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <h1>Just Do It</h1>
+        <p>Experience the ultimate in Nike's 3D performance shoes. Engineered for speed, comfort, and style—elevate your game with cutting-edge technology and premium materials.</p>
+        <a href="products.html" class="btn">Shop Now</a>
+        <a href="#features" class="btn" style="margin-left: 10px;">Explore Features</a>
+        <!-- Order Now Button -->
+        <br>
+        <a href="products.html" class="order-btn">Order Now</a>
+      </div>
+      <div class="shoe-3d">
+        <img src="images/nike-shoes/hero-shoe.png" alt="Nike Shoe" class="hero-shoe">
+      </div>
+    </div>
+  </section>
+
+  <!-- Rest of the sections remain the same as in the previous update -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2>Premium Features</h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <span class="feature-icon"></span>
+          <h3>3D Comfort Tech</h3>
+          <p>Advanced cushioning with layered support for all-day comfort and injury prevention.</p>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon"></span>
+          <h3>Breathable Materials</h3>
+          <p>High-quality fabrics that wick away sweat, keeping your feet cool and dry.</p>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon"></span>
+          <h3>Iconic Design</h3>
+          <p>Sleek, modern aesthetics inspired by athletes, blending fashion with function.</p>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon"></span>
+          <h3>Durable Build</h3>
+          <p>Built to last with reinforced soles and flexible materials for any terrain.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+  <div class="container">
+    <h2>What Athletes Say</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial-slide active">
+        <div class="testimonial-content">
+          <p>These shoes transformed my runs—unmatched comfort and style!</p>
+          <div class="testimonial-author">- Athlete Alex</div>
+        </div>
+      </div>
+      <div class="testimonial-slide">
+        <div class="testimonial-content">
+          <p>Nike's 3D tech gives me the edge I need on the court.</p>
+          <div class="testimonial-author">- Runner Jordan</div>
+        </div>
+      </div>
+      <div class="testimonial-slide">
+        <div class="testimonial-content">
+          <p>From training to streetwear, these are my go-to shoes.</p>
+          <div class="testimonial-author">- Trainer Sam</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-dots">
+      <div class="testimonial-dot active" onclick="changeSlide(0)"></div>
+      <div class="testimonial-dot" onclick="changeSlide(1)"></div>
+      <div class="testimonial-dot" onclick="changeSlide(2)"></div>
+    </div>
+  </div>
+</section>
+
+
+  <section class="why-choose">
+    <div class="container">
+      <h2>Why Choose Nike?</h2>
+      <div class="why-list">
+        <div class="why-item">
+          <h3>Innovation</h3>
+          <p>Leading the way in athletic footwear with groundbreaking 3D designs.</p>
+        </div>
+        <div class="why-item">
+          <h3>Performance</h3>
+          <p>Engineered for peak performance, whether you're sprinting or strolling.</p>
+        </div>
+        <div class="why-item">
+          <h3>Community</h3>
+          <p>Join a global community of athletes who trust Nike for excellence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Privacy</a>
+    </div>
+    <p>&copy; 2023 Nike. All rights reserved. Follow us on social media.</p>
+  </footer>
+</body>
+</html>
